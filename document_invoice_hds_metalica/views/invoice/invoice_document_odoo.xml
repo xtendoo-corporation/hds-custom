@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+
+        <template
+            id="document_invoice_hds_metalica.invoice_document_odoo"
+            inherit_id="account.report_invoice_document"
+        >
+              <xpath expr="o.type in ('out_invoice', 'in_refund')" position="replace">
+                  <t t-if="o.invoice_payment_term_id.name != 'Día 10 a 60 días fecha fra.'">
+                      <p t-if="o.type in ('out_invoice', 'in_refund')">
+                        Por favor utilice la siguiente referencia al realizar su pago : <b><span t-field="o.invoice_payment_ref"/></b>
+                    </p>
+                    </t>
+                    <p t-if="o.type in ('out_invoice', 'in_refund')" style="display:none;">
+                        Por favor utilice la siguiente referencia al realizar su pago : <b><span t-field="o.invoice_payment_ref"/></b>
+                    </p>
+              </xpath>
+        </template>
+
+    </data>
+</odoo>
