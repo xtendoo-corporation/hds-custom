@@ -194,14 +194,14 @@
                             </div>
                         </div>
                     </div>
-                    <t t-if="o.payment_mode_id.name != 'Rbo. domiciliado'">
-                        <p t-if="o.type in ('out_invoice', 'in_refund')">
-                            Por favor utilice la siguente referencia al realziar su pago:
-                            <b>
-                                <span t-field="o.invoice_payment_ref"/>
-                            </b>
-                        </p>
-                    </t>
+<!--                    <t t-if="o.payment_mode_id.name != 'Rbo. domiciliado'">-->
+<!--                        <p t-if="o.type in ('out_invoice', 'in_refund')">-->
+<!--                            Por favor utilice la siguente referencia al realziar su pago:-->
+<!--                            <b>-->
+<!--                                <span t-field="o.invoice_payment_ref"/>-->
+<!--                            </b>-->
+<!--                        </p>-->
+<!--                    </t>-->
                     <p t-if="o.narration" name="comment">
                         <span t-field="o.narration"/>
                     </p>
