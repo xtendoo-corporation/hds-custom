@@ -254,6 +254,12 @@
                     <!--Fin rbo.domiciliado Ibercaja-->
                     <!--Cobro por transferencia Bankinter -->
                     <t t-if="o.payment_mode_id.name == 'Cobro por transferencia Bankinter'">
+                      <p t-if="o.type in ('out_invoice', 'in_refund')">
+                            Por favor utilice la siguente referencia al realziar su pago:
+                            <b>
+                                <span t-field="o.invoice_payment_ref"/>
+                            </b>
+                        </p>
                         <p style="margin:2px 0;padding:0;">Forma de pago:</p>
                         <p style="margin:2px 0;padding:0;">Transferencia a n/ccc.</p>
                         <p style="margin:2px 0;padding:0;" name="bank">
@@ -264,6 +270,12 @@
                     <!--Fin Cobro por transferencia Bankinter-->
                      <!--Cobro por transferencia Caixa -->
                     <t t-if="o.payment_mode_id.name == 'Cobro por transferencia Caixa'">
+                      <p t-if="o.type in ('out_invoice', 'in_refund')">
+                            Por favor utilice la siguente referencia al realziar su pago:
+                            <b>
+                                <span t-field="o.invoice_payment_ref"/>
+                            </b>
+                        </p>
                         <p style="margin:2px 0;padding:0;">Forma de pago:</p>
                         <p style="margin:2px 0;padding:0;">Transferencia a n/ccc.</p>
                         <p style="margin:2px 0;padding:0;" name="bank">
@@ -274,6 +286,12 @@
                     <!--Fin Cobro por transferencia Caixa-->
                     <!--Cobro por transferencia Caja Rural -->
                     <t t-if="o.payment_mode_id.name == 'Cobro por transferencia Caja Rural'">
+                      <p t-if="o.type in ('out_invoice', 'in_refund')">
+                            Por favor utilice la siguente referencia al realziar su pago:
+                            <b>
+                                <span t-field="o.invoice_payment_ref"/>
+                            </b>
+                        </p>
                         <p style="margin:2px 0;padding:0;">Forma de pago:</p>
                         <p style="margin:2px 0;padding:0;">Transferencia a n/ccc.</p>
                         <p style="margin:2px 0;padding:0;" name="bank">
@@ -284,6 +302,12 @@
                     <!--Fin Cobro por transferencia Caja Rural-->
                     <!--Cobro por transferencia Ibercaja -->
                     <t t-if="o.payment_mode_id.name == 'Cobro por transferencia Ibercaja'">
+                      <p t-if="o.type in ('out_invoice', 'in_refund')">
+                            Por favor utilice la siguente referencia al realziar su pago:
+                            <b>
+                                <span t-field="o.invoice_payment_ref"/>
+                            </b>
+                        </p>
                         <p style="margin:2px 0;padding:0;">Forma de pago:</p>
                         <p style="margin:2px 0;padding:0;">Transferencia a n/ccc.</p>
                         <p style="margin:2px 0;padding:0;" name="bank">
