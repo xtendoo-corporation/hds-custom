@@ -316,6 +316,22 @@
                         </p>
                     </t>
                     <!--Fin Cobro por transferencia Ibercaja-->
+                    <!--Cobro Pagaré -->
+                    <t t-if="o.payment_mode_id.name == 'Pagaré'">
+                      <p t-if="o.type in ('out_invoice', 'in_refund')">
+                            Por favor utilice la siguente referencia al realizar su pago:
+                            <b>
+                                <span t-field="o.invoice_payment_ref"/>
+                            </b>
+                        </p>
+                        <p style="margin:2px 0;padding:0;">Forma de pago:</p>
+                        <p style="margin:2px 0;padding:0;">Pagaré</p>
+                        <!--<p style="margin:2px 0;padding:0;" name="bank">-->
+                        <!--    <b><span>Cuenta bancaria:</span></b>-->
+                        <!--    <span>Ibercaja ES95 2085 1272 0103 0007 8301</span>-->
+                        <!--</p>-->
+                    </t>
+                    <!--Fin Cobro Pagaré-->
                     <div id="qrcode" t-if="(o.company_id.qr_code) and (o.currency_id.name == 'EUR') and (o.invoice_partner_bank_id.acc_number != False) and o.amount_residual &gt; 0">
                         <p t-if="(o.invoice_partner_bank_id.qr_code_valid)">
                             <strong class="text-center">Scan me with your banking app.</strong>
