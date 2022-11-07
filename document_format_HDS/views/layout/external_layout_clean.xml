@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <template
-            id="document_format_clean.external_layout_clean_xtendoo"
+            id="document_format_hds.external_layout_clean"
             inherit_id="web.external_layout_clean"
         >
             <xpath expr="//div[hasclass('o_clean_header')]" position="replace">
