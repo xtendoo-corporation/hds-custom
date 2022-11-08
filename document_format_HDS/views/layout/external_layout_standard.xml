@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <template
+            id="document_format_HDS.external_layout_standar"
+            inherit_id="web.external_layout_standard"
+        >
+            <xpath expr="//div[@name='company_address']" position="replace">
+                <div name="company_address" class="col-6">
+                    <p style="margin:0px;" t-if="company.partner_id" t-field="company.partner_id"></p>
+                    <p style="margin:0px;" t-if="company.partner_id.street" t-field="company.partner_id.street"></p>
+                    <p style="margin:0px">
+                                <span t-if="company.partner_id.zip" t-field="company.partner_id.zip"/>
+                                <span t-if="company.partner_id.city" t-field="company.partner_id.city"/>
+                                <span t-if="company.partner_id.state_id.name">
+                                    (<span t-field="company.partner_id.state_id.name"/>)
+                                </span>
+                            </p>
+                    <p style="margin:0px" t-if="o.partner_id.country_id" t-field="o.partner_id.country_id"/>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

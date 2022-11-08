@@ -12,7 +12,7 @@
         "base",
     ],
     "data": [
-        "views/layout/external_layout_clean.xml",
+        "views/layout/external_layout_standard.xml",
         "views/sale/sale_order_document.xml",
         "views/invoice/invoice_document.xml",
         "views/delivery/delivery_document.xml",
