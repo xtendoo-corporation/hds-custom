@@ -10,12 +10,17 @@
     "license": "AGPL-3",
     "depends": [
         "base",
+        "mail",
+        "sale",
+        "account",
     ],
     "data": [
         "views/layout/external_layout_standard.xml",
         "views/sale/sale_order_document.xml",
         "views/invoice/invoice_document.xml",
         "views/delivery/delivery_document.xml",
+        "data/mail_template_data_invoice.xml",
+        "data/mail_template_data_sale.xml",
     ],
     "installable": True,
     "auto_install": False,
