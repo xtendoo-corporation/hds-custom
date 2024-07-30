@@ -565,7 +565,7 @@ msgstr ""
 
 #. module: document_format_HDS
 #: model_terms:ir.ui.view,arch_db:document_format_HDS.report_invoice_document
-msgid "Por favor utilice la siguente referencia al realziar su pago:"
+msgid "Por favor utilice la siguente referencia al realizar su pago:"
 msgstr ""
 
 #. module: document_format_HDS

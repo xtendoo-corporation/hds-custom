@@ -227,7 +227,7 @@
                     </div>
                    <!--                    <t t-if="o.payment_mode_id.name != 'Rbo. domiciliado'">-->
 <!--                        <p t-if="o.type in ('out_invoice', 'in_refund')">-->
-<!--                            Por favor utilice la siguente referencia al realziar su pago:-->
+<!--                            Por favor utilice la siguente referencia al realizar su pago:-->
 <!--                            <b>-->
 <!--                                <span t-field="o.invoice_payment_ref"/>-->
 <!--                            </b>-->
@@ -295,7 +295,7 @@
                     <!--Cobro por transferencia Bankinter -->
                     <t t-if="o.payment_mode_id.name == 'Cobro por transferencia Bankinter'">
                       <p t-if="o.type in ('out_invoice', 'in_refund')">
-                            Por favor utilice la siguente referencia al realziar su pago:
+                            Por favor utilice la siguente referencia al realizar su pago:
                             <b>
                                 <span t-field="o.invoice_payment_ref"/>
                             </b>
@@ -311,7 +311,7 @@
                      <!--Cobro por transferencia Caixa -->
                     <t t-if="o.payment_mode_id.name == 'Cobro por transferencia Caixa'">
                       <p t-if="o.type in ('out_invoice', 'in_refund')">
-                            Por favor utilice la siguente referencia al realziar su pago:
+                            Por favor utilice la siguente referencia al realizar su pago:
                             <b>
                                 <span t-field="o.invoice_payment_ref"/>
                             </b>
@@ -327,7 +327,7 @@
                     <!--Cobro por transferencia Caja Rural -->
                     <t t-if="o.payment_mode_id.name == 'Cobro por transferencia Caja Rural'">
                       <p t-if="o.type in ('out_invoice', 'in_refund')">
-                            Por favor utilice la siguente referencia al realziar su pago:
+                            Por favor utilice la siguente referencia al realizar su pago:
                             <b>
                                 <span t-field="o.invoice_payment_ref"/>
                             </b>
@@ -343,7 +343,7 @@
                     <!--Cobro por transferencia Ibercaja -->
                     <t t-if="o.payment_mode_id.name == 'Cobro por transferencia Ibercaja'">
                       <p t-if="o.type in ('out_invoice', 'in_refund')">
-                            Por favor utilice la siguente referencia al realziar su pago:
+                            Por favor utilice la siguente referencia al realizar su pago:
                             <b>
                                 <span t-field="o.invoice_payment_ref"/>
                             </b>
