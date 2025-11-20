@@ -8,8 +8,8 @@
         - Quantities: from 3 to 2 decimals
         - Unit Prices: from 5 to 2 decimals
     """,
-    'author': 'HDS Metalica',
-    'website': 'https://www.hdsmetalica.com',
+    'author': 'Ivan Parrado',
+    'website': 'https://www.xtendoo.es',
     'license': 'LGPL-3',
     'depends': [
         'base',
