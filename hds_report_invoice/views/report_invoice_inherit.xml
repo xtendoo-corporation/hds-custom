@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <!--  Heredar el layout Bubble para intercambiar dirección del cliente y número de factura  -->
+        <template id="external_layout_bubble_inherit" inherit_id="web.external_layout_bubble">
+            <!--  Reemplazar la tabla completa para intercambiar las columnas  -->
+            <xpath expr="//table[@class='o_ignore_layout_styling table table-borderless mb-0']" position="replace">
+                <table class="o_ignore_layout_styling table table-borderless mb-0">
+                    <tbody>
+                        <tr>
+                            <!--  NÚMERO DE FACTURA A LA IZQUIERDA  -->
+                            <td t-if="not information_block" class="align-bottom p-0 pe-2">
+                                <h2 class="mb-4 text-nowrap" t-out="layout_document_title"/>
+                            </td>
+                            <!--  DIRECCIÓN DEL CLIENTE A LA DERECHA  -->
+                            <td class="p-0" style="vertical-align: top; width: 100%; min-width: 100%;">
+                                <div style="margin-left: -450px; margin-top: -6px;">
+                                    <t t-call="web.address_layout"/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr t-if="information_block">
+                            <td colspan="2" class="align-bottom p-0">
+                                <h2 class="text-nowrap" t-out="layout_document_title"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </xpath>
+            <!--  Subir ligeramente la información de la empresa (logo y datos)  -->
+            <xpath expr="//div[@name='company_address']" position="attributes">
+                <attribute name="style">margin-top: -25px;</attribute>
+            </xpath>
+        </template>
+    </data>
+</odoo>
