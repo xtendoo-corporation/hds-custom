@@ -47,9 +47,9 @@
             <xpath expr="//div[@class='mb-3' and p[@name='payment_communication']]" position="replace">
                 <div class="mb-3" t-if="o.move_type in ('out_invoice', 'in_refund') and o.payment_reference and (not o.payment_mode_id or o.payment_mode_id.name != 'Pagaré')">
                     <p name="payment_communication">
-                        Payment Communication: <span class="fw-bold" t-field="o.payment_reference">INV/2023/00001</span>
+                        Comunicaciones de pago <span class="fw-bold" t-field="o.payment_reference">INV/2023/00001</span>
                         <t t-if="o.partner_bank_id">
-                            <br/> on this account: <span t-field="o.partner_bank_id" class="fw-bold"/>
+                            <br/> en esta cuenta: <span t-field="o.partner_bank_id" class="fw-bold"/>
                         </t>
                     </p>
                 </div>
