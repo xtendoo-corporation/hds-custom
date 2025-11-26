@@ -31,28 +31,21 @@
                 <attribute name="style">margin-top: -25px;</attribute>
             </xpath>
         </template>
-        <!-- Herencia para ocultar el número de cuenta bancaria en el reporte de factura -->
-        <template id="report_invoice_payment_mode_no_acc_number" inherit_id="account_payment_partner.report_invoice_payment_mode">
-            <!-- Eliminar el <p> que contiene la cuenta bancaria, usando t-foreach como selector -->
-            <xpath expr="//p[@t-foreach='o.sudo().partner_banks_to_show()']" position="replace"/>
-            <!-- Mostrar solo el método de pago cuando sea 'Pagaré' -->
+        <!-- Herencia para mostrar/ocultar el número de cuenta bancaria y el método de pago según el modo de pago -->
+        <template id="report_invoice_payment_mode_custom" inherit_id="account.report_invoice_document">
+            <!-- Elimina el bloque original de Payment Communication con cuenta bancaria -->
+            <xpath expr="//p[@name='payment_communication']" position="replace"/>
+            <!-- Elimina las condiciones de pago -->
+            <xpath expr="//span[@id='payment_terms_note_id']" position="replace"/>
+            <!-- Inserta solo el bloque personalizado -->
             <xpath expr="//span[@t-field='o.narration']/.." position="before">
-                <t t-if="o.payment_mode_id and o.payment_mode_id.name == 'Pagaré'">
-                    <p><strong>Método de pago:</strong> Pagaré</p>
+                <t t-if="o.payment_mode_id">
+                    <p><strong>Forma de pago:</strong> <t t-esc="o.payment_mode_id.name"/></p>
+                    <p><strong>Comunicaciones de pago:</strong> <t t-esc="o.name"/></p>
+                    <t t-if="o.payment_mode_id.name != 'Pagaré' and o.partner_bank_id">
+                        <p><strong>Cuenta bancaria:</strong> <span t-field="o.partner_bank_id" class="fw-bold"/></p>
+                    </t>
                 </t>
-            </xpath>
-        </template>
-        <!-- Herencia para ocultar la comunicación bancaria solo si el método de pago es 'Pagaré' -->
-        <template id="report_invoice_hide_payment_communication_pagares" inherit_id="account.report_invoice_document">
-            <xpath expr="//div[@class='mb-3' and p[@name='payment_communication']]" position="replace">
-                <div class="mb-3" t-if="o.move_type in ('out_invoice', 'in_refund') and o.payment_reference and (not o.payment_mode_id or o.payment_mode_id.name != 'Pagaré')">
-                    <p name="payment_communication">
-                        Comunicaciones de pago <span class="fw-bold" t-field="o.payment_reference">INV/2023/00001</span>
-                        <t t-if="o.partner_bank_id">
-                            <br/> en esta cuenta: <span t-field="o.partner_bank_id" class="fw-bold"/>
-                        </t>
-                    </p>
-                </div>
             </xpath>
         </template>
     </data>
